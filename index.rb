@@ -2,11 +2,12 @@ require "rubygems"
 require "sinatra"
 
 get '/' do
-	send_file 'index.html'
+	#send_file 'index.html'
+	erb :index
 end
 
 get '/proyectos' do
-	send_file 'portfolio.html'
+	erb :portofolio
 end
 
 
