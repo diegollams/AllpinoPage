@@ -12,6 +12,13 @@ end
 
 
 
+get '/galeria' do
+	erb :gallery
+end
+
+
+
+
 get '/about' do
 	"Developer, Diego Llamas Velasco"
 end
