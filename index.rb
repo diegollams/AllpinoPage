@@ -1,24 +1,18 @@
 require "rubygems"
 require "sinatra"
+require "bundler/setup"
+require "Haml"
+
 
 get '/' do
-	erb :index
+	@owl_js = "js/owl.carousel.min.js"
+	@owl_css = ["css/owl.carousel.css","css/owl.transitions.css"]
+	haml :index	
 end
 
-get '/proyectos' do
-	erb :portofolio
-end
-
-
-
-get '/galeria' do
-	erb :gallery
+get '/test' do
+	haml :gallery	
 end
 
 
-
-
-get '/about' do
-	"Developer, Diego Llamas Velasco"
-end
 
