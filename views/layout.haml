@@ -4,8 +4,11 @@
     %meta{:content => "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no", :name => "viewport"}/
     %title Allpino
     %link{:href => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css", :rel => "stylesheet",:type=>"text/css"}
+    %link{:href => "/css/material-wfont.min.css", :rel => "stylesheet",:type=>"text/css"}
     %link{:href => "/css/ripples.min.css", :rel => "stylesheet",:type=>"text/css"}
     %link{:href => "/css/material.min.css", :rel => "stylesheet",:type=>"text/css"}
+    
+
     - if @owl_css
       - @owl_css.each do |css|
         = "<link href=\"/#{css}\" rel='stylesheet' type='text/css'>"
@@ -34,29 +37,32 @@
       %div.container-fluid
         %div.row
           %div.col-md-4
-            %div.well.bs-component
+            %div.well
               %form.form-horizontal
                 %fieldset
-                  %div.alert.alert-primary
-                    %strong Contacto
+                  .panel.panel-primary
+                    .panel-heading
+                      %h4.panel-title Ubicacion
                   .form-group
                     %label.col-lg-2.control-label{:for => "inputEmail"} Email
                     .col-lg-10
-                      %input#inputEmail.form-control{:placeholder => "Email", :type => "email"}/  
+                      %input#inputEmail.form-control{:placeholder => "Email", :type => "email"}
                   .form-group
                     %label.col-lg-2.control-label{:for => "textArea"} Textarea
                     .col-lg-10
                       %textarea#textArea.form-control{:rows => "3"}
                       %span.help-block A longer block of help text that breaks onto a new line and may extend beyond one line.
                       %button.btn.btn-primary{:type => "submit"} Submit
+          %div.col-md-4 
+            %div.well
+              .panel.panel-primary
+                .panel-heading
+                  %h4.panel-title Ubicacion
           %div.col-md-4
-            %div.well.bs-component
-              %div.alert.alert-primary
-                %strong Ubicacion
-          %div.col-md-4
-            %div.well.bs-component
-              %div.alert.alert-primary
-                %strong Links de Interes
+            %div.well
+              .panel.panel-primary
+                .panel-heading
+                  %h4.panel-title Links de interes
            
 
 
