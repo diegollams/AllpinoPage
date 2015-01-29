@@ -9,47 +9,59 @@
       - @owl_css.each do |css|
         = "<link href=\"/#{css}\" rel='stylesheet' type='text/css'>"
   %body
-    
-%nav.navbar.navbar-default
-  .container-fluid
-    / Brand and toggle get grouped for better mobile display
-    .navbar-header
-      %button.navbar-toggle.collapsed{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
-        %span.sr-only Toggle navigation
-        %span.icon-bar
-        %span.icon-bar
-        %span.icon-bar
-      %a.navbar-brand{:href => "#"} Allpino
-    / Collect the nav links, forms, and other content for toggling
-    #bs-example-navbar-collapse-1.collapse.navbar-collapse
-      %ul.nav.navbar-nav
-        %li
-          %a{:href => "#"} Proyectos
-        %li
-          %a{:href => "#"} Pasto Artificial
-        %li
-          %a{:href => "#"} Pasto Artificial
-       
-= yield
+      
+    %nav.navbar.navbar-default.navbar-fixed-top 
+      .container-fluid
+        .navbar-header
+          %button.navbar-toggle.collapsed{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+            %span.sr-only Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.navbar-brand{:href => "#"} Allpino
+        #bs-example-navbar-collapse-1.collapse.navbar-collapse
+          %ul.nav.navbar-nav
+            %li
+              %a{:href => "#"} Proyectos
+            %li
+              %a{:href => "#"} Pasto Artificial
+            %li
+              %a{:href => "#"} Pasto Artificial
+           
+    = yield
 
-%div#footer      
-  %form.form-horizontal
-    %fieldset
-      %legend Legend
-      .form-group
-        %label.col-lg-2.control-label{:for => "inputEmail"} Email
-        .col-lg-10
-          %input#inputEmail.form-control{:placeholder => "Email", :type => "email"}/  
-      .form-group
-        %label.col-lg-2.control-label{:for => "textArea"} Textarea
-        .col-lg-10
-          %textarea#textArea.form-control{:rows => "3"}
-          %span.help-block A longer block of help text that breaks onto a new line and may extend beyond one line.
-          %button.btn.btn-primary{:type => "submit"} Submit
+    %div#footer      
+      %div.container-fluid
+        %div.row
+          %div.col-md-4
+            %div.well.bs-component
+              %form.form-horizontal
+                %fieldset
+                  %div.alert.alert-primary
+                    %strong Contacto
+                  .form-group
+                    %label.col-lg-2.control-label{:for => "inputEmail"} Email
+                    .col-lg-10
+                      %input#inputEmail.form-control{:placeholder => "Email", :type => "email"}/  
+                  .form-group
+                    %label.col-lg-2.control-label{:for => "textArea"} Textarea
+                    .col-lg-10
+                      %textarea#textArea.form-control{:rows => "3"}
+                      %span.help-block A longer block of help text that breaks onto a new line and may extend beyond one line.
+                      %button.btn.btn-primary{:type => "submit"} Submit
+          %div.col-md-4
+            %div.well.bs-component
+              %div.alert.alert-primary
+                %strong Ubicacion
+          %div.col-md-4
+            %div.well.bs-component
+              %div.alert.alert-primary
+                %strong Links de Interes
+           
 
 
-%script{:src=>"https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"}
-%script{:src => "/js/material.min.js"}
-%script{:src => "/js/bootstrap.min.js"}
-%script{:src => "/js/ripples.min.js"}
-= "<script src=\"/#{@owl_js}\"></script>" if @owl_js
+    %script{:src=>"https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"}
+    %script{:src => "/js/material.min.js"}
+    %script{:src => "/js/bootstrap.min.js"}
+    %script{:src => "/js/ripples.min.js"}
+    = "<script src=\"/#{@owl_js}\"></script>" if @owl_js

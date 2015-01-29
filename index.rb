@@ -1,12 +1,12 @@
 require "rubygems"
 require "sinatra"
 require "bundler/setup"
-require "Haml"
+require "haml"
 
 
 get '/' do
 	@owl_js = "js/owl.carousel.min.js"
-	@owl_css = ["css/owl.carousel.css","css/owl.transitions.css"]
+	@owl_css = ["css/owl.carousel.css","css/owl.transitions.css","css/owl.theme.css"]
 	haml :index	
 end
 
