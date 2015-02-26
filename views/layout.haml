@@ -3,7 +3,7 @@
   %head
     %meta{:content => "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no", :name => "viewport"}/
     %title Allpino
-    %link{:href => "css/materialize.min.css", :media => "screen,projection", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "css/materialize.css", :media => "screen,projection", :rel => "stylesheet", :type => "text/css"}/
 
     %meta{:content => "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no", :name => "viewport"}/
 
@@ -18,6 +18,8 @@
       %nav
         .nav-wrapper
           %a.brand-logo{:href => "/"} Allpino
+          %a.button-collapse{"data-activates" => "mobile-demo", :href => "#"}
+            %i.mdi-navigation-menu
           %ul.right.hide-on-med-and-down
             %li
               %a{:href => "proyectos"} Proyectos
@@ -25,42 +27,82 @@
               %a{:href => "#"} Pasto Artificial
             %li
               %a{:href => "#"} Pasto Artificial
+          %ul#mobile-demo.side-nav
+            %li
+              %a{:href => "proyectos"} Proyectos
+            %li
+              %a{:href => "#"} Pasto Artificial
+            %li
+              %a{:href => "#"} Pasto Artificial
     
-    %div.container-fluid
-      .jumbotron
-        %h1 Madereria y Construcciones Allpino 
-        %p
-          
-          %span.span2.label.label-primary Obra publica
-          %span.span2.label.label-primary Pasto artificial
-          %span.span2.label.label-primary Velarias
+    .row
+      .col.s12
+        .card.white.darken-1
+          .card-content.black-text
+            %span.card-title 
+              %h1.black-text
+                Madereria y Construcciones Allpino 
+          .card-action
+            %a{:href => "#"} Obra publica
+            %a{:href => "#"} Pasto artificial
+            %a{:href => "#"} Velarias
+
 
     = yield
 
     %footer.page-footer
       .container
         .row
-          .col.l6.s12
-            %h5.white-text Footer Content
-            %p.grey-text.text-lighten-4 You can use rows and columns here to organize your footer content.
-          .col.l4.offset-l2.s12
+          .col.s12.m4.l6
+            %h5.white-text Contacto
+            %row
+              %form.col.s12
+                .row
+                  .input-field.col.s12
+                    %i.mdi-action-account-circle.prefix
+                    %input#email.validate{:type => "email"}/
+                    %label{:for => "email"} Email
+                .row
+                  .input-field.col.s12
+                    %i.mdi-editor-mode-edit.prefix
+                    %textarea#textarea1.materialize-textarea
+                    %label{:for => "textarea1"} Textarea
+
+                .row
+                  %button.btn.waves-effect.waves-light{:name => "action", :type => "submit"}
+                    Submit
+                    %i.mdi-content-send.right
+                
+
+          .col.s12.m6.l3
             %h5.white-text Links
             %ul
               %li
-                %a.grey-text.text-lighten-3{:href => "#!"} Link 1
+                %a.grey-text.text-lighten-3{:href => "#!"} Facebook
               %li
-                %a.grey-text.text-lighten-3{:href => "#!"} Link 2
+                %a.grey-text.text-lighten-3{:href => "#!"} Pasto 
               %li
-                %a.grey-text.text-lighten-3{:href => "#!"} Link 3
+                %a.grey-text.text-lighten-3{:href => "#!"} Correo
               %li
                 %a.grey-text.text-lighten-3{:href => "#!"} Link 4
+          .col.s12.m6.l3
+            %h5.white-text Links
+            %ul
+              %li
+                %a.grey-text.text-lighten-3{:href => "#!"} Facebook
+             
       .footer-copyright
         .container
           © 2014 Copyright Text
-          %a.grey-text.text-lighten-4.right{:href => "#!"} More Links
+          %a.grey-text.text-lighten-4.right{:href => "#!"} Develop by Diego Llamas
 
-    %script{:src=>"https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"}
+    %script{:type=>"text/javascript", :src=>"https://code.jquery.com/jquery-2.1.1.min.js"}
     %script{:src => "js/materialize.min.js", :type => "text/javascript"}
+    :javascript
+      $(document).ready( function() {
+        $(".button-collapse").sideNav();
+      } );
+
     = "<script src=\"/#{@owl_js}\"></script>" if @owl_js
     - if @photo_swipe_js
       - @photo_swipe_js.each do |js|
