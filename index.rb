@@ -10,7 +10,9 @@ get '/' do
 	haml :index	
 end
 
-get '/test' do
+get '/proyectos' do
+	@photo_swipe_js = ["js/photoswipe.min.js","js/photoswipe-ui-default.min.js"]
+	@photo_swipe_css =["css/photoswipe.css","css/default-skin/default-skin.css"]
 	haml :gallery	
 end
 
