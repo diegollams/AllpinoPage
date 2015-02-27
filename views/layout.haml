@@ -5,8 +5,7 @@
     %title Allpino
     %link{:href => "css/materialize.css", :media => "screen,projection", :rel => "stylesheet", :type => "text/css"}/
 
-    %meta{:content => "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no", :name => "viewport"}/
-
+    
     - if @owl_css
       - @owl_css.each do |css|
         = "<link href=\"/#{css}\" rel='stylesheet' type='text/css'>"
@@ -14,26 +13,30 @@
       - @photo_swipe_css.each do |css|
         = "<link href=\"/#{css}\" rel='stylesheet'>"
   %body
+
+    %div.navbar-fixed
+      %nav
+        .nav-wrapper
+          %a.brand-logo{:href => "/"} Allpino
+          %a.button-collapse{"data-activates" => "mobile-demo", :href => "#"}
+            %i.mdi-navigation-menu
+          %ul.right.hide-on-med-and-down
+            %li
+              %a{:href => "proyectos"} Proyectos
+            %li
+              %a{:href => "#"} Pasto Artificial
+            %li
+              %a{:href => "#"} Pasto Artificial
+    %nav{style: "height: 0px;"}
+      %ul#mobile-demo.side-nav
+        %li
+          %a{:href => "proyectos"} Proyectos
+        %li
+          %a{:href => "#"} Pasto Artificial
+        %li
+          %a{:href => "#"} Pasto Artificial
     
-    %nav
-      .nav-wrapper
-        %a.brand-logo{:href => "/"} Allpino
-        %a.button-collapse{"data-activates" => "mobile-demo", :href => "#"}
-          %i.mdi-navigation-menu
-        %ul.right.hide-on-med-and-down
-          %li
-            %a{:href => "proyectos"} Proyectos
-          %li
-            %a{:href => "#"} Pasto Artificial
-          %li
-            %a{:href => "#"} Pasto Artificial
-        %ul#mobile-demo.side-nav
-          %li
-            %a{:href => "proyectos"} Proyectos
-          %li
-            %a{:href => "#"} Pasto Artificial
-          %li
-            %a{:href => "#"} Pasto Artificial
+    
     
     .row{style: "margin-bottom: 0px;"}
       .col.s12
@@ -75,23 +78,23 @@
                     %i.mdi-content-send.right
                 
 
-          .col.s12.m6.l3
-            %h5.white-text Links
-            %ul
-              %li
-                %a.grey-text.text-lighten-3{:href => "#!"} Facebook
-              %li
-                %a.grey-text.text-lighten-3{:href => "#!"} Pasto 
-              %li
-                %a.grey-text.text-lighten-3{:href => "#!"} Correo
-              %li
-                %a.grey-text.text-lighten-3{:href => "#!"} Link 4
-          .col.s12.m6.l3
-            %h5.white-text Links
-            %ul
-              %li
-                %a.grey-text.text-lighten-3{:href => "#!"} Facebook
-             
+            .col.s12.m6.l3
+              %h5.white-text Links
+              %ul
+                %li
+                  %a.grey-text.text-lighten-3{:href => "#!"} Facebook
+                %li
+                  %a.grey-text.text-lighten-3{:href => "#!"} Pasto 
+                %li
+                  %a.grey-text.text-lighten-3{:href => "#!"} Correo
+                %li
+                  %a.grey-text.text-lighten-3{:href => "#!"} Link 4
+            .col.s12.m6.l3
+              %h5.white-text Links
+              %ul
+                %li
+                  %a.grey-text.text-lighten-3{:href => "#!"} Facebook
+               
       .footer-copyright
         .container
           © 2014 Copyright Text
