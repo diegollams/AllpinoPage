@@ -5462,11 +5462,11 @@ small {
     .card.medium .card-content {
       height: 150px; }
   .card.large {
-    height: 500px; }
+    height: 600; }
     .card.large .card-image {
-      height: 330px; }
+      height: 700px; }
     .card.large .card-content {
-      height: 170px; }
+      height: 50px; }
   .card .card-image {
     position: relative; }
     .card .card-image img {
