@@ -14,26 +14,26 @@
       - @photo_swipe_css.each do |css|
         = "<link href=\"/#{css}\" rel='stylesheet'>"
   %body
-    .navbar-fixed
-      %nav
-        .nav-wrapper
-          %a.brand-logo{:href => "/"} Allpino
-          %a.button-collapse{"data-activates" => "mobile-demo", :href => "#"}
-            %i.mdi-navigation-menu
-          %ul.right.hide-on-med-and-down
-            %li
-              %a{:href => "proyectos"} Proyectos
-            %li
-              %a{:href => "#"} Pasto Artificial
-            %li
-              %a{:href => "#"} Pasto Artificial
-          %ul#mobile-demo.side-nav
-            %li
-              %a{:href => "proyectos"} Proyectos
-            %li
-              %a{:href => "#"} Pasto Artificial
-            %li
-              %a{:href => "#"} Pasto Artificial
+    
+    %nav
+      .nav-wrapper
+        %a.brand-logo{:href => "/"} Allpino
+        %a.button-collapse{"data-activates" => "mobile-demo", :href => "#"}
+          %i.mdi-navigation-menu
+        %ul.right.hide-on-med-and-down
+          %li
+            %a{:href => "proyectos"} Proyectos
+          %li
+            %a{:href => "#"} Pasto Artificial
+          %li
+            %a{:href => "#"} Pasto Artificial
+        %ul#mobile-demo.side-nav
+          %li
+            %a{:href => "proyectos"} Proyectos
+          %li
+            %a{:href => "#"} Pasto Artificial
+          %li
+            %a{:href => "#"} Pasto Artificial
     
     .row{style: "margin-bottom: 0px;"}
       .col.s12
@@ -101,7 +101,8 @@
     %script{:src => "js/materialize.min.js", :type => "text/javascript"}
     :javascript
       $(document).ready( function() {
-        $(".button-collapse").sideNav();
+
+         $('.button-collapse').sideNav({menuWidth: 240, activationWidth: 70});
       } );
 
     = "<script src=\"/#{@owl_js}\"></script>" if @owl_js
