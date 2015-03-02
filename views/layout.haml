@@ -59,20 +59,20 @@
           .col.s12.m4.l6
             %h5.white-text Contacto
             %row
-              %form.col.s12
+              %form.col.s12{action: '/contact', method: 'POST'}
                 .row
                   .input-field.col.s12
                     %i.mdi-action-account-circle.prefix
-                    %input#email.validate{:type => "email"}/
+                    %input#email.validate{:type => "email", name: 'email'}/
                     %label{:for => "email"} Email
                 .row
                   .input-field.col.s12
                     %i.mdi-editor-mode-edit.prefix
-                    %textarea#textarea1.materialize-textarea
-                    %label{:for => "textarea1"} Textarea
+                    %textarea#textarea1.materialize-textarea{name: 'message'}
+                    %label{:for => "textarea1" } Textarea
 
                 .row
-                  %button.btn.waves-effect.waves-light{:name => "action", :type => "submit"}
+                  %button.btn.waves-effect.waves-light{:name => "action", :type => "submit",onclick: " $('#modal1').openModal();"}
                     Submit
                     %i.mdi-content-send.right
                 
@@ -98,14 +98,27 @@
         .container
           © 2014 Copyright Text
           %a.grey-text.text-lighten-4.right{:href => "#!"} Develop by Diego Llamas#!"} Develop by Diego Llamas
+    #modal1.modal
+      .modal-content
+        %h4 Gracias!
+        %p Estaremos en contacto pronto.
+      .modal-footer
+        %a.waves-effect.waves-green.btn-flat.modal-action.modal-close{:href => "#"} Listo
 
     %script{:type=>"text/javascript", :src=>"https://code.jquery.com/jquery-2.1.1.min.js"}
     %script{:src => "js/materialize.min.js", :type => "text/javascript"}
     :javascript
       $(document).ready( function() {
 
-         $('.button-collapse').sideNav({menuWidth: 240, activationWidth: 70});
+        $('.button-collapse').sideNav({menuWidth: 240, activationWidth: 70});
+        
+        // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+        $('.modal-trigger').leanModal();
+        
+        
+  
       } );
+      
 
     = "<script src=\"/#{@owl_js}\"></script>" if @owl_js
     - if @photo_swipe_js

@@ -16,5 +16,27 @@ get '/proyectos' do
 	haml :gallery	
 end
 
+post '/contact' do
+	require 'pony'
+	Pony.mail({
+		from: 'mail',
+		to: params[:email],
+		subject: 'Mensaje de la pagina',
+		body: params[:message],
+		via: :smtp,
+		via_options:  {
+    	 	address:             'smtp.gmail.com',
+     		port:                  '587',
+     		enable_starttls_auto:  true,
+    		user_name:             'mail',
+    		password:              'pass',
+    		authentication:        :plain, 
+    		domain:                "localhost.5000" 
+     }
+		})
+    redirect '/'
+
+
+end
 
 
