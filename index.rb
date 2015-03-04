@@ -19,7 +19,7 @@ end
 post '/contact' do
 	require 'pony'
 	Pony.mail({
-		from: 'mail',
+		from: ENV["user_mail"],
 		to: params[:email],
 		subject: 'Mensaje de la pagina',
 		body: params[:message],
@@ -28,8 +28,8 @@ post '/contact' do
     	 	address:             'smtp.gmail.com',
      		port:                  '587',
      		enable_starttls_auto:  true,
-    		user_name:             'mail',
-    		password:              'pass',
+    		user_name:             ENV["user_mail"],
+    		password:              ENV["user_mail_password"],
     		authentication:        :plain, 
     		domain:                "localhost.5000" 
      }
